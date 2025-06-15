@@ -1,21 +1,26 @@
-//advance or modern
+// Advanced or modern
 import express from 'express';
 
-const app = express()
-const port = process.env.PORT || 3000//hardcorded port
-app.get('/', (req, res) => {
-    res.send('hello')
+const app = express();
+const port = process.env.PORT || 3000; // hardcoded port
+
+const joke = [
+  {
+    id: 1,
+    title: 'a joke',
+    joke: 'teri mkc'
+  },
+  {
+    id: 2,
+    title: 'another joke',
+    joke:'teri mkc firse haha'
+  }
+];
+
+app.get('/api/jokes', (req, res) => {
+  res.json(joke); // return the array as JSON
 });
-const joke=[{
-  joke1: "Why don't scientists trust atoms? Because they make up everything!",
-  joke2: "Why did the function cross the road? To return to the other side!",
-  joke3: "I told my computer I needed a break, and now it won’t stop sending me KitKat ads."
-}]
 
-app.get('/',(req,res)=>{
-    res.json(joke)
-})
 app.listen(port, () => {
-    console.log(`port is listening to port ${port}`)
-})
-
+  console.log(`Port is listening on ${port}`);
+});
