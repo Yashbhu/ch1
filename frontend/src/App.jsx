@@ -6,7 +6,7 @@ function App() {
   const [jokes, setJokes] = useState([])
 
   useEffect(() => {
-    axios.get('http://localhost:3000/jokes')  // Make sure your backend route matches this
+    axios.get('http://localhost:3000/api/jokes')  // Make sure your backend route matches this
       .then((response) => {
         setJokes(response.data)
       })
