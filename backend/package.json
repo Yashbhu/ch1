@@ -1,16 +1,16 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Modern Express server using ES Modules",
+  "description": "",
   "main": "server.js",
-  "type": "module", 
-    "scripts": {
+  "type": "module",
+  "scripts": {
     "start": "node server.js"
   },
-  "author": "Yash Bahuguna",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.4.5",
     "express": "^5.1.0"
   }
 }
