@@ -6,14 +6,14 @@ function App() {
   const [jokes, setJokes] = useState([])
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/jokes')  // Make sure your backend route matches this
-      .then((response) => {
-        setJokes(response.data)
-      })
-      .catch((error) => {
-        console.log(error)   // ✅ This was incorrectly closed with a `))` in your code
-      });
-  }, []); // ✅ Empty dependency array to run it only once on load
+  axios.get('/api/jokes')
+    .then((response) => {
+      setJokes(response.data)
+    })
+    .catch((error) => {
+      console.log(error)
+    });
+    }, []);  // <-- Empty array ensures this runs only once on mount
 
   return (
     <>
@@ -21,14 +21,15 @@ function App() {
       <p>JOKES: {jokes.length}</p>
 
       {
-        jokes.map((person, index) => (
-          <p key={index}>
-            {person.title} <br />
-            joke: {person.joke}
-          </p>
+        jokes.map((x,y) => (
+          <div key={x.id}>
+            <h1>{x.title} </h1>
+            <h1>{x.joke}</h1>
+          </div>
         ))
       }
     </>
+    
   )
 }
 
